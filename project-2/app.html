@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"
+		integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+	<title>Forest</title>
+
+
+</head>
+
+
+<body>
+	<app-header data-page="app"></app-header>
+	<canvas width="1400" height="600">
+		there is a canvas here
+	</canvas>
+	<div class="columns" id="controls">
+		<div class="column">
+			<span class="subtitle has-text-weight-bold">Spawn:</span>
+			<select id="field-creature" class="select is-primary is-small">
+				<option>Mushroom</option>
+				<option>Snail</option>
+
+			</select>
+			<button class="button is-success is-fullwidth" id="add-create" title="Add Creature">Add</button>
+			<button class="button is-danger is-fullwidth" id="remove-create" title="Remove Creature">Remove</button>
+
+		</div>
+		<div class="column">
+			<span class="subtitle has-text-weight-bold">Weather:</span>
+			<select id="field-weather" class="select is-primary is-small">
+				<option>Clear</option>
+				<option>Rain</option>
+				<option>Snow</option>
+
+			</select>
+
+		</div>
+		<div class="column">
+			<span class="subtitle has-text-weight-bold">On Click:</span>
+			<select id="field-clicked" class="select is-primary is-small">
+				<option>Drag</option>
+				<option>Freeze</option>
+				<option>Fling</option>
+
+			</select>
+		</div>
+		<div class="column">
+			<button id="flower-btn" class="button is-warning is-fullwidth" title="Spawn Flower Crown">
+				Spawn Flower Crown</button>
+		</div>
+		<div class="column">
+			<audio id="audio" loop>
+				<source src="assets/audio/back-audio.mp3" type='audio/mp3'>
+			</audio>
+			<button id="audio-btn" class="button is-info is-fullwidth" title="Change Audio">
+				Play Music</button>
+		</div>
+	</div>
+
+
+	<script type="module" src="src/loader.js"></script>
+	<script type="module" src="src/game.js"></script>
+	<script type="module" src="src/audio.js"></script>
+	<app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+</body>
+
+</html>

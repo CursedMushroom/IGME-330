@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>XHR - Load JSON</title>
+	<style>
+		#image-main {
+			border: 1px solid black;
+			background-color: white;
+			padding: 7px;
+			box-shadow: 1px 1px 2px #333;
+			margin: .1rem;
+			width: 300px;
+		}
+
+		#title::first-letter {
+			text-transform: capitalize;
+		}
+
+		.card {
+			height: 500px;
+			overflow: auto;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h2>XHR - Load JSON</h2>
+
+	<hr>
+	<button id="my-button">Load Data</button>
+	<div id="output">Click button to load</div>
+
+
+
+	<div class="card">
+		<div class="card-header-title is-size-4">
+			<span id="title">???</span>
+		</div>
+
+
+		<div class="card-content">
+			<div class="card-image">
+				<figure class="image">
+					<img id="image-main" src="" alt="placeHolder">
+				</figure>
+			</div>
+			<div class="content pt-4">
+
+				<span id="text">text</span><br>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		document.querySelector("#my-button").onclick = loadJsonFetch1;
+		const options = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': '6450b25e6emshd553a7a5b590e80p12f288jsn58973c98e9f4',
+				'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
+				Cookie: 'foo=bar;SameSite=None;Secure'
+
+			}
+		};
+
+		function loadJsonFetch1() {
+			fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/info', options)
+				.then(response => response.json())
+				.then(
+					json => console.log(JSON.stringify(json),
+						console.log(json)));
+		}
+
+		function loadJsonXHR() {
+			const data = null;
+
+
+			const xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.onload = (e) => {
+				console.log(`In onload - HTTP Status Code = ${e.target.status}`);
+				let json;
+				try {
+					json = JSON.parse(e.target.responseText);
+					console.log(json);
+				} catch {
+					document.querySelector("#output").innerHTML = "<p>BAD JSON!</p>";
+					return;
+				}
+			}
+
+			xhr.open("GET", "https://omgvamp-hearthstone-v1.p.rapidapi.com/info");
+
+			xhr.open("GET", `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/${section}/%7BMage%7D`);//2
+			xhr.setRequestHeader("X-RapidAPI-Key", "6450b25e6emshd553a7a5b590e80p12f288jsn58973c98e9f4");//3
+			xhr.setRequestHeader("X-RapidAPI-Host", "omgvamp-hearthstone-v1.p.rapidapi.com");//4
+
+			xhr.send(data);//5
+
+
+
+			//xhr.open("GET", "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/%7Brace%7D");
+			//xhr.open("GET", "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/%7Bset%7D");
+			//xhr.open("GET", "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/factions/%7Bfaction%7D");
+
+
+
+		}
+		function helper(url, callback) {//main function called
+			const xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.onload = callback;
+			xhr.onerror = e => console.log(e);
+
+			xhr.open("GET", url);
+			xhr.setRequestHeader("X-RapidAPI-Key", "6450b25e6emshd553a7a5b590e80p12f288jsn58973c98e9f4");//3
+			xhr.setRequestHeader("X-RapidAPI-Host", "omgvamp-hearthstone-v1.p.rapidapi.com");//4
+
+			xhr.send();
+
+		}
+		const callBack = e => {//seperate calllbacks for each search. ie.user clicks paladin:helper(url,paladinCallback)
+			let json;
+			try {
+				json = JSON.parse(e.target.responseText);
+			}
+			catch {
+				console.log("error");
+				return;
+			}
+
+			console.log(json.message);
+			document.querySelector("#output").innerHTML = json.message;
+		}
+
+		//helper("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/%7BMage%7D", callBack);
+	</script>
+</body>
+
+</html>

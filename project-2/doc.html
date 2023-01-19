@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<title>Documentation</title>
+</head>
+
+<body>
+
+	<app-header data-page="doc"></app-header>
+
+	<main class="px-1 py-1">
+		<div class=" mr-1 p-1" id="doc-back">
+			<div class="is-large p-4">
+
+				<app-title data-title="Mushroom Forest"></app-title>
+
+
+				<div class="box mt-2">
+					<h2 class="subtitle  mb-2 mt-0 as-text-weight-bold">Concept</h2>
+					<ol class="has-text-dark">
+						<li>The user is tasked with observing and interacting woth mushrooms wothin there enviroment.
+							The user can directly interact via dragging, freezing, or flinging them around. As well as
+							being able to change the time of day via the sun/moon/time orb. the user can also change the
+							weather, and the mushrooms will change there behavior, with find shelter or having there
+							speed reduced. The user can summon a snail, the the mushrooms will try to avoid and stay
+							away from. And while they wont seek them out, the user can spawn in flower crowns, the the
+							mushrooms will put on when close enough to them.</li>
+
+
+
+					</ol>
+
+					<h2 class="subtitle  mb-2 mt-0 as-text-weight-bold">PROJECT REQUIREMENTS</h2>
+					<ol class="has-text-dark">
+						<li><a href="https://github.com/tonethar/IGME-330-Fall-2022/blob/main/projects/p2.md">Project 2
+								github</a>
+						</li>
+					</ol>
+
+					<h2 class="subtitle  mb-2 mt-0 as-text-weight-bold">RESOURCES UTILIZED</h2>
+					<ol class="has-text-dark">
+						<li><a href="https://fonts.googleapis.com/css?family=Advent+Pro">Advent Pro</a></li>
+						<li><a href="https://www.clipstudio.net/en/">Art Made using Clip Studio Paint</a></li>
+						<li><a href="https://assets.clip-studio.com/en-us/detail?id=1910804">pixel art brushes made by
+								"saturns_day" made the process go by a lot smoother</a></li>
+						<li><a href="https://www.bandlab.com/?lang=en">Music Made using BandLab</a></li>
+						<li><a href="https://plantpot.works/5264">Weather based on</a></li>
+						<li>330 Cage Clicker, web-audio and in class paint exercise</li>
+
+					</ol>
+
+
+
+
+					<h2 class="subtitle  mb-2 mt-0 as-text-weight-bold">GRADING</h2>
+					<ol class="has-text-dark">
+						<li>Program uses bulma for css styling, Canvas API for the main/core application. And uses Fetch
+							to get the onload presets for start up interface</li>
+						<li>All css and html validates, js follows varible and function naming conventions</li>
+						<li>All js is loaded with script</li>
+						<li>Js classes, web-components, audio and main js are in diffrent files, interacting with import
+							and export</li>
+						<li>Save and restore are used through at key seperate points.</li>
+						<li>Passes HTML Validation</li>
+						<li>All css is in a seperate file</li>
+						<li>Passes CSS validation</li>
+						<li>Images are at there needed size and nothing is needed to be cropped. as well as not being
+							oversized for the file.</li>
+						<li>Audio file is small, and loops when needed</li>
+					</ol>
+
+					<h2 class="subtitle  mb-2 mt-0 as-text-weight-bold">To-Do</h2>
+
+					<ol class="has-text-dark">
+						<li>The flower crowns have a bug, not entirly sure what triggers it but at a point with an
+							unclaimed flower crown, and thing moving vanishes.</li>
+						<li>Add animated sprites for walking, sleeping and putting on the flower crown</li>
+						<li>Add in more mushroom to world interaction</li>
+						<li>Add in more creature their interactions with the mushrooms</li>
+						<li>get adding items to world working</li>
+						<li>Have enviroment sprites change with the weather, for more than just the particles falling
+							from the sky</li>
+
+					</ol>
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+	<script type="module" src="src/loader.js"></script>
+
+</body>
+
+</html>

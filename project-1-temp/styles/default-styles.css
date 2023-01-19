@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Asul');
+
+body {
+  background-color: rgba(47, 48, 60);
+  ;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+#element-card-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0.5em;
+  color: white;
+  font-family: 'Asul';
+
+}
+
+#page-title {
+  font-family: 'Asul';
+  color: #DDB967;
+  font-size: 2.5rem;
+}
+
+h2.subtitle {
+  font-family: 'Asul', sans-serif;
+}
+
+#app-body {
+  background-image: url("../images/wood.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+#community-body {
+  background-image: url("../images/hearthstone-tomb.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+
+}
+
+#fav-body{
+  background-image: url("../images/group-2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+#full-container {
+  background-color: rgba(47, 48, 60);
+
+}
+
+select#field-limit {
+  width: 2.5rem;
+}
+
+#header-image {
+  background-image: url("../images/hearthstone-back.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+#hero-contents {
+  font-family: "Asul";
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgb(47, 48, 60) 30%, rgba(47, 48, 60) 50%, rgba(47, 48, 60) 70%, rgba(0, 255, 252, 0) 100%);
+  padding: 1em;
+}
+
+select {
+  font-family: "Asul";
+}
+
+span {
+  font-family: "Asul";
+}
+
+#hero-contents .title {
+  color: #DDB967;
+}
+
+#hero-contents p {
+  color: white;
+  padding: .25em;
+}
+
+
+#hero-contents button {
+  font-family: "Asul";
+
+
+}
+
+#fav-header {
+  font-family: "Asul";
+  color: rgb(16, 16, 50);
+  font-size: 2.5rem;
+
+}
+
+@media only screen and (min-width: 1024px) {
+  #button-holder {
+
+    margin-top: 15px;
+
+  }
+}

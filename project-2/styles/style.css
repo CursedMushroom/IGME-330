@@ -1,0 +1,50 @@
+canvas {
+    border: 1px solid black;
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+
+body {
+    font-family: "Advent Pro";
+    background-color:rgb(100, 110, 104);
+
+}
+
+.dg.ac {
+    position: relative;
+
+}
+
+.columns {
+    margin: auto;
+    width: 90%;
+    background-color:rgb(215, 217, 215);
+}
+
+select {
+    width: 60%;
+}
+
+button{
+    font-family: "Advent Pro";
+}
+#doc-back{
+    background-color:rgb(100, 110, 104);
+    font-family: "Advent Pro";
+    
+}
+
+#header-image {
+    background-image: url("../assets/images/backtemp2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+#hero-contents p {
+    color: white;
+    padding: .25em;
+}

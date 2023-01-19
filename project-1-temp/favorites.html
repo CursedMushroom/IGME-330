@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearthstone Card Search</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" ↩
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" ↩
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/default-styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+  <app-header data-page="fav"></app-header>
+
+
+  <main class="px-1 py-1">
+    <div class="has-background-info mr-1 p-1" id="fav-body">
+      <div class="is-large p-4">
+        <div class="title  has-text-centered" id="fav-header">Hearthstone Favorites</div>
+        <div class="box mt-2">
+          <h2 class="subtitle has-text-weight-bold mb-0 ">Checkout your favorite cards!</h2>
+          <button id="btn-clear-all" class="button is-warning is-medium" title="Clear all favorites!">
+            Clear all Favorites
+          </button>
+
+
+        </div>
+
+
+
+
+
+        <div class="box " id="full-container">
+          <div class="is-large p-1">
+
+            <p id="element-status" class="has-text-warning mb-2">No favorites yet</p>
+            <div id="element-card-holder">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+    </div>
+  </main>
+
+
+
+  <script type="module" src="src/loader.js"></script>
+  <script type="module" src="src/favorite.js"></script>
+</body>
+
+</html>

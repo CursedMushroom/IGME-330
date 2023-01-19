@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Phyllotaxis-Lewis</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+
+		}
+
+		#sliders {
+			display: grid;
+			grid-template-columns: auto;
+		}
+	</style>
+	<script>
+		"use strict";
+		const canvasWidth = 1000, canvasHeight = 550;
+		let ctx;
+		let n = 0;
+		let c = 2;
+		
+		let divergence = 137.3;
+
+		let red;
+		let green;
+		let blue;
+		let space;
+		let diver;
+		let petalSize;
+		
+
+
+		window.onload = init;
+
+		function init() {
+			ctx = canvas.getContext("2d");
+			canvas.width = canvasWidth;
+			canvas.height = canvasHeight;
+			document.querySelector("#btnClear").onclick = function () {
+				ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+				n = 0;
+			};
+			document.querySelector("#set1").onclick = function () {
+				document.querySelector("#diver").value=137.3;
+				document.querySelector("#red").value=164;
+				document.querySelector("#green").value=3;
+				document.querySelector("#blue").value=111;
+			};
+			document.querySelector("#set2").onclick = function () {
+				document.querySelector("#diver").value=137.5;
+				document.querySelector("#red").value=244;
+				document.querySelector("#green").value=228;
+				document.querySelector("#blue").value=9;
+			};
+			document.querySelector("#set3").onclick = function () {
+				document.querySelector("#diver").value=137.6;
+				document.querySelector("#red").value=22;
+				document.querySelector("#green").value=219;
+				document.querySelector("#blue").value=147;
+			};
+			document.querySelector("#btnReset").onclick = function () {
+				document.querySelector("#diver").value=137.5;
+				document.querySelector("#red").value=69;
+				document.querySelector("#green").value=240;
+				document.querySelector("#blue").value=223;
+				document.querySelector("#petal").value=1;
+				document.querySelector("#space").value=2;
+			};
+
+			red = document.querySelector("#red");
+			green = document.querySelector("#green");
+			blue = document.querySelector("#blue");
+			
+			space=document.querySelector("#space");
+			diver=document.querySelector("#diver");
+			petalSize=document.querySelector("#petal");
+
+			ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+			//flower(150, 150, 0);
+			loop();
+
+		}
+
+		function loop() {
+			setTimeout(loop, 1000 / 60);
+			console.log(red.value);
+
+			let a = n * dtr(diver.value);
+			let r = space.value * Math.sqrt(n);
+			//console.log(a, r);
+
+			let x = r * Math.cos(a) + canvasWidth / 2;
+			let y = r * Math.sin(a) + canvasHeight / 2;
+			//console.log(x, y);
+
+			// let aDegrees = (n * divergence) % 256;
+			// let color = `rgb(${aDegrees},${aDegrees},255)`;
+			//let color = `hsl(${n/5 % 361},100%,50%)`;
+			let color = `rgb(${red.value},${blue.value},${green.value})`;
+			//let color="red";
+			// let aDegrees = (n * divergence) % 361;
+			// let color = `hsl(${aDegrees},100%,50%)`;
+			drawCircle(ctx, x, y, petalSize.value, color);
+
+
+			n++;
+			//divergence += .001;
+			//console.log(divergence);
+			//c+=.005;
+			//petalSize+=.01;
+			// //console.log(n);1400-1600
+		}
+
+
+		// helpers
+		function dtr(degrees) {
+			return degrees * (Math.PI / 180);
+		}
+
+
+		function drawCircle(ctx, x, y, radius, color) {
+			ctx.save();
+			ctx.fillStyle = color;
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, Math.PI * 2);
+			ctx.closePath();
+			ctx.fill();
+			ctx.restore();
+		}
+
+	</script>
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+
+	<div id="sliders">
+		<div>
+			<p>Color</p>
+			<input type="range" min="1" max="255" value="69" class="slider" id="red">
+			<input type="range" min="1" max="255" value="240" class="slider" id="green">
+			<input type="range" min="1" max="255" value="223" class="slider" id="blue">
+		</div>
+		<div>
+			<p>Spacing || Divergence || Petal Size</p>
+			<input type="range" min="1" max="5" value="2" step="0.1" class="slider" id="space">
+			<input type="range" min="99.5" max="180" step="0.1" value="137.5" class="slider" id="diver">
+			<input type="range" min="1" max="7" value="1" class="slider" id="petal">
+		</div>
+
+	</div>
+	<div>
+		<button id="btnClear">Clear</button>
+		<button id="btnReset">Reset</button>
+		<button id="set1">Angle: 137.3</button>
+		<button id="set2">Angle: 137.5</button>
+		<button id="set3">Angle: 137.6</button>
+	</div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearthstone Card Search</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles/default-styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <div class="hero  is-fullheight" id="header-image">
+
+    <div class="hero-head">
+      <app-header data-page="home"></app-header>
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered" id="hero-contents">
+        <p class="title">
+          Hearthstone Home
+        </p>
+        <p class="subtitle">
+          View all cards in Hearthstone by Blizzard Entertainment.<br>
+          Search by class, race, and more.
+        </p>
+
+        <button onclick="window.location.href='app.html'" class="button is-info is-rounded is-medium">Card
+          Search</button>
+
+
+      </div>
+    </div>
+    <div class="hero-foot">
+      <app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+    </div>
+  </div>
+
+
+
+  <script type="module" src="src/loader.js"></script>
+</body>
+
+</html>

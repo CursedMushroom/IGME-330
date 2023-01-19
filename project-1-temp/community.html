@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearthstone Card Search</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/default-styles.css">
+</head>
+
+
+<body>
+
+  <app-header data-page="com"></app-header>
+
+
+  <main class="px-1 py-1">
+    <div class="has-background-info mr-1 p-1" id="community-body">
+      <div class="is-large p-4">
+        <div class="title has-text-centered" id="page-title">Hearthstone Community</div>
+        <div class="box mt-2">
+          <h2 class="subtitle has-text-weight-bold mb-0">Checkout the communities favorite cards</h2>
+          
+
+
+        </div>
+
+
+
+
+
+        <div class="box" id="full-container">
+          <div class="is-large p-1">
+
+            <p id="element-status" class="has-text-warning mb-2">No community liked cards</p>
+            <div id="element-card-holder">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+    </div>
+  </main>
+
+
+
+ 
+  <script type="module" src="src/loader.js"></script>
+
+  <script type="module" src="src/community.js"></script>
+  
+</body>
+
+</html>

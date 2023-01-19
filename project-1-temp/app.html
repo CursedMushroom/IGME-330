@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearthstone Card Search</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/default-styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+
+<body>
+
+  <app-header data-page="app"></app-header>
+
+  <main class="px=1 py-1" >
+    <div class="has-background-info mr-1 p-1" id="app-body">
+      <div class="is-large p-4">
+
+        <div class="title has-text-centered" id="page-title">Card Search</div>
+
+        <div class="box mt-2" id="info">
+          <p class="mb-5">
+            Start by searching by race, class, facton, etc.
+
+          </p>
+
+          <span class="subtitle has-text-weight-bold">Class:</span>
+          <select id="field-class" class="select is-primary is-small">
+            <option>Neutral</option>
+            <option>Death Knight</option>
+            <option>Druid</option>
+            <option>Hunter</option>
+            <option>Mage</option>
+            <option>Paladin</option>
+            <option>Rogue</option>
+            <option>Shaman</option>
+            <option>Warlock</option>
+            <option>Warrior</option>
+            <option>Dream</option>
+            <option>Whizbang</option>
+            <option>Demon Hunter</option>
+          </select>
+
+
+          <span class="subtitle has-text-weight-bold">Faction:</span>
+          <select id="field-faction" class="select is-primary is-small">
+            <option>All</option>
+            <option>Horde</option>
+            <option>Alliance</option>
+            <option>Neutral</option>
+          </select>
+
+          <span class="subtitle has-text-weight-bold">Race:</span>
+          <select id="field-race" class="select is-primary is-small">
+            <option>All</option>
+            <option>Orc</option>
+            <option>Murloc</option>
+            <option>Demon</option>
+            <option>Mech</option>
+            <option>Elemental</option>
+            <option>Beast</option>
+            <option>Totem</option>
+            <option>Pirate</option>
+            <option>Dragon</option>
+            <option>Quilboar</option>
+            <option>Naga</option>
+          </select>
+
+          <span class="subtitle has-text-weight-bold">Type:</span>
+          <select id="field-type" class="select is-primary is-small">
+            <option>All</option>
+            <option>Hero</option>
+            <option>Minion</option>
+            <option>Spell</option>
+            <option>Enchantment</option>
+            <option>Weapon</option>
+            <option>Hero Power</option>
+            <option>Location</option>
+          </select>
+
+          <span class="subtitle has-text-weight-bold">Set:</span>
+          <select id="field-set" class="select is-primary is-small">
+            <option>All</option>
+            <option>Basic</option>
+            <option>Classic</option>
+            <option>Hall of Fame</option>
+            <option>Missions</option>
+            <option>Demo</option>
+            <option>System</option>
+            <option>Slush</option>
+            <option>Promo</option>
+            <option>Naxxramas</option>
+            <option>Goblins vs Gnomes</option>
+            <option>Blackrock Mountain</option>
+            <option>The Grand Tournament</option>
+            <option>Credits</option>
+            <option>Hero Skins</option>
+            <option>Tavern Brawl</option>
+            <option>The League of Explorers</option>
+            <option>Whispers of the Old Gods</option>
+            <option>One Night in Karazhan</option>
+            <option>Mean Streets of Gadgetzan</option>
+            <option>Journey to Un'Goro</option>
+            <option>Knights of the Frozen Throne</option>
+            <option>Kobolds & Catacombs</option>
+            <option>The Witchwood</option>
+            <option>The Boomsday Project</option>
+            <option>Rastakhan's Rumble</option>
+            <option>Rise of Shadows</option>
+            <option>Taverns of Time</option>
+            <option>Saviors of Uldum</option>
+            <option>Descent of Dragons</option>
+            <option>Galakrond's Awakening</option>
+            <option>Ashes of Outland</option>
+            <option>Wild Event</option>
+            <option>Scholomance Academy</option>
+            <option>Battlegrounds</option>
+            <option>Demon Hunter Initiate</option>
+            <option>Madness at the Darkmoon Faire</option>
+            <option>Forged in the Barrens</option>
+            <option>Legacy</option>
+            <option>Core</option>
+            <option>Wailing Caverns</option>
+            <option>United in Stormwind</option>
+            <option>Mercenaries</option>
+            <option>Fractured in Alterac Valley</option>
+            <option>Voyage to the Sunken City</option>
+            <option>Unknown</option>
+            <option>Murder at Castle Nathria</option>
+          </select>
+
+          <span class="subtitle has-text-weight-bold">Number of Cards:</span>
+          <select id="amount" class="select is-primary is-small" >
+            <option>30</option>
+            <option>50</option>
+            <option>80</option>
+            <option>100</option>
+            <option>150</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+
+          </select>
+
+
+          <div class="control is-inline-block ml-6" id="button-holder">
+            <div class="buttons">
+
+              <button id="btn-cardbacks" class="button is-info" title="See Card backs!">
+                See All Card Backs
+              </button>
+              <button id="btn-search" class="button is-primary " title="Search for Cards!">
+                Search!
+              </button>
+              <button id="btn-clear-all" class="button is-warning " title="Clear all results!">
+                Clear all Results
+              </button>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="box " id="full-container">
+          <div class="is-large p-1">
+            <h2 class="subtitle has-text-weight-bold mb-2 mt-0 has-text-light">Card Results</h2>
+            <p id="element-status" class="has-text-warning mb-2">Click the <b>Search</b> button to start!</p>
+            <div id="element-card-holder">
+              
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <app-footer data-name="Olivia Lewis" data-year="2022" data-contact="osl2877@g.rit.edu"></app-footer>
+    </div>
+
+  </main>
+
+
+
+ 
+  <script type="module" src="src/loader.js"></script> 
+  <script type="module" src="src/results.js"></script>
+</body>
+
+</html>
